@@ -1,6 +1,6 @@
-# Virtual Environment Folder Manager
+# Virtual Environment and Python Cache Folder Manager
 
-This Python script helps you find, calculate the size of, and delete virtual environment (venv) folders on your system. It scans a specified drive or path, lists the found venv folders, and provides an option to delete them with a progress bar.
+This Python script helps you find, calculate the size of, and delete virtual environment (venv) and Python cache (__pycache__) folders on your system. It scans a specified drive or path, lists the found folders, and provides an option to delete them with a progress bar.
 
 ## Table of Contents
 - [Features](#features)
@@ -11,11 +11,13 @@ This Python script helps you find, calculate the size of, and delete virtual env
 - [License](#license)
 
 ## Features
-- Scans a specified drive or directory for virtual environment folders.
-- Calculates the total size of found venv folders.
-- Displays the size of each venv folder in a human-readable format.
-- Provides a progress bar for deleting venv folders.
-- Handles permission errors gracefully.
+- Scans a specified drive or directory for virtual environment and Python cache folders
+- Calculates the total size of found folders
+- Displays the size of each folder in a human-readable format
+- Provides a progress bar for deleting folders
+- Handles permission errors gracefully
+- Skips system directories automatically
+- Distinguishes between venv and __pycache__ folders in output
 
 ## Installation
 
@@ -29,7 +31,7 @@ python app.py
 
 ## Usage
 
-Run the script using Python. You will be prompted to enter a drive letter (e.g., D) or a full path to scan for venv folders.
+Run the script using Python. You will be prompted to enter a drive letter (e.g., D) or a full path to scan for venv and __pycache__ folders.
 
 ```bash
 python app.py
@@ -38,15 +40,13 @@ python app.py
 ### Example Interaction
 
 1. Enter drive letter (e.g. D) or full path (default: C:\): D
-2. Scanning D drive for venv folders...
-3. Found the following venv folders:
-   - D:\path\to\venv1 (10.50 MB)
-   - D:\path\to\venv2 (5.25 MB)
-4. Total size: 15.75 MB
+2. Scanning D drive for venv and __pycache__ folders...
+3. Found the following folders:
+   - D:\path\to\venv1 (10.50 MB) [venv]
+   - D:\path\to\project\__pycache__ (1.25 MB) [pycache]
+   - D:\path\to\venv2 (5.25 MB) [venv]
+4. Total size: 17.00 MB
 5. Do you want to delete these folders? (y/n)
-
-
-
 
 ## Functions
 
@@ -57,11 +57,10 @@ Calculates the total size of a folder in bytes.
 Converts bytes to a human-readable format (B, KB, MB, GB, TB).
 
 ### `find_venv_folders(start_path='D:\\')`
-Finds all venv folders in the specified drive or path.
+Finds all venv and __pycache__ folders in the specified drive or path.
 
 ### `delete_venv_folders(venv_paths)`
-Deletes the specified venv folders and shows a progress bar during deletion.
-
+Deletes the specified folders and shows a progress bar during deletion.
 
 ## License
 
