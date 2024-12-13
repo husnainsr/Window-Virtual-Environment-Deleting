@@ -22,8 +22,8 @@ This Python script helps you find, calculate the size of, and delete virtual env
 To run this script, ensure you have Python installed on your system. You can clone the repository and run the script directly.
 
 ```bash
-git clone https://github.com/yourusername/venv-folder-manager.git
-cd venv-folder-manager
+git clone https://github.com/husnainsr/Window-Virtual-Environment-Deleting.git
+cd Window-Virtual-Environment-Deleting
 python app.py
 ```
 
